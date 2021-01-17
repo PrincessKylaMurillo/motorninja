@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Color</title>
+		<link rel="stylesheet" href="styles.css" type="text/css">
+	</head>
+	<body class="bodycolor">
+		<div class="box1">
+			<p class="color">Pick Your Color</p>
+			<img class="motorcycle" id="ninjamoto" src="ninjamotor.png"/>
+			
+			
+			<p class="randcol">Generate Random Color</p>
+			<p class="speccol">Generate Specific Color</p>
+			<input class="buttonr" type="button" value='GENERATE' onclick="randcolor()"/>
+			<select id="drop_down_menu" class="dropdownlaman">
+					<option  value="0">Light blue</option> <option  value="1">Yellow</option>	<option  value="2">Blue</option>
+					<option  value="3">Black</option>  <option  value="4">Gray</option>  <option value="5">Green</option>
+				</select>
+				<input class="buttonshow" type="button" value='SHOW'onclick="showcolor()"/>
+				<input class="buttonreset" type="button" value='RESET' onclick="reset()"/>
+		</div>
+
+<script type="text/javascript"> 
+	
+function reset(){
+    document.getElementById("ninjamoto").style.backgroundColor = "white";
+}
+	
+
+var colors = ['#808080','#FFFF00','#0000FF','#000000','#00FF00','#add8e6'];
+    var cIndex = 0;
+    function randcolor(){
+        var randoms = Math.floor(Math.random() * 6);
+        var ky = document.getElementById("ninjamoto");
+        ky.style.backgroundColor = colors[randoms];
+}
+
+function showcolor(){
+    var select = document.getElementById("drop_down_menu").value;
+    if (select == "0"){
+			document.getElementById("ninjamoto").style.backgroundColor = "light blue";
+		}
+	else if (select == "1"){
+			document.getElementById("ninjamoto").style.backgroundColor = "yellow";
+		}
+    else if (select == "2"){
+			document.getElementById("ninjamoto").style.backgroundColor = "blue";
+		}
+    else if (select == "3"){
+			document.getElementById("ninjamoto").style.backgroundColor = "black";
+		}
+    else if (select == "4"){
+			document.getElementById("ninjamoto").style.backgroundColor = "gray";
+		}
+    else if(select == "5"){
+			document.getElementById("ninjamoto").style.backgroundColor = "green";
+		}
+   
+}
+
+
+</script>
+
+	</body>
+</html>
